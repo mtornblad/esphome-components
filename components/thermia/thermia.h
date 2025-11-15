@@ -20,9 +20,6 @@ class Thermia : public i2c::I2CDevice, public Component {
 
   float get_setup_priority() const override;
 
-  void set_registry(sensor::Sensor* registry) { this->registry_value_ = encregistryoder; }
-
-
  protected:
   uint8_t number_{0};
   int32_t value_{0};
@@ -32,7 +29,6 @@ class Thermia : public i2c::I2CDevice, public Component {
 
   sensor::Sensor* encoder_value_{nullptr};
   sensor::Sensor* firmware_version_{nullptr};
-  void setEncoderValue(int32_t value);
 };
 
 
