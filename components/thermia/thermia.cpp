@@ -22,7 +22,6 @@ void Thermia::setup() {
     this->mark_failed();
     return;
   }
-  setEncoderValue(0);
   ESP_LOGI(TAG, "Thermia Firmware: %d", firmware);
 }
 
