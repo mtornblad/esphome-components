@@ -25,6 +25,9 @@ void Thermia::setup() {
   ESP_LOGI(TAG, "Thermia Firmware: %d", firmware);
 }
 
+void Thermia::loop() {
+}
+
 
 
 }  // namespace thermia
