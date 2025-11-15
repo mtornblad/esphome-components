@@ -1,0 +1,45 @@
+esphome:
+  name: wire
+  friendly_name: wire
+
+esp32:
+  board: esp32-c6-devkitc-1
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "GC9ZhBppkg2xEms9kJukJIZzlvTiS9505fras+GacUg="
+
+ota:
+  - platform: esphome
+    password: "00fc75b3894f6c996f39fb4a881f97f1"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Wire Fallback Hotspot"
+    password: "pS1uBLbTsT3m"
+
+captive_portal:
+    
+i2c:
+  - id: bus_a
+    sda: GPIO01
+    scl: GPIO02
+    scan: true
+
+external_components:
+  - source:
+      type: git
+      url: https://github.com/mtornblad/esphome-components
+      ref: main
+    components: [thermia]
+
